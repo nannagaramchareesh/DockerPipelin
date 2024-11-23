@@ -9,5 +9,12 @@ pipeline {
                 }
             }
         }
+        stage('Build') {
+            steps {
+                script {
+                    bat 'docker run -d -p 8083:3000 my-nodejs-app'
+                }
+            }
+        }
     }
 }
